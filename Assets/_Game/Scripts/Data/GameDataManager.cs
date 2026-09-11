@@ -16,6 +16,10 @@ public class GameDataManager : MonoSingleton<GameDataManager>
     protected void Awake()
     {
         CreateFolder();
+    }
+
+    private void Init()
+    {
         foreach (var data in DataList)
         {
             data.Init();
@@ -27,8 +31,8 @@ public class GameDataManager : MonoSingleton<GameDataManager>
             {
                 data.LoadData();
             }
-            data.SaveData();
         }
+        SaveAllData();
     }
 
     [ContextMenu("DeleteSave")]
