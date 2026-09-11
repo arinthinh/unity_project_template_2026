@@ -1,8 +1,5 @@
-namespace Framework
+public enum ESound
 {
-    public enum ESound
-    {
-        None,
-        Whoosh,
-    }
+    None,
+    Whoosh,
 }

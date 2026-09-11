@@ -1,7 +1,4 @@
-namespace Framework
+public enum EMusic
 {
-    public enum EMusic
-    {
-        None,
-    }
+    None,
 }

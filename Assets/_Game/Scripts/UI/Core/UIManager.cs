@@ -12,7 +12,7 @@ public enum EUILayer
 
 /// <summary>
 
-public sealed class UIManager : SingletonMonoBehaviour<UIManager>
+public sealed class UIManager : MonoSingleton<UIManager>
 {
     [Header("CAMERA")]
     [SerializeField] private Camera _uiCamera;
@@ -31,12 +31,6 @@ public sealed class UIManager : SingletonMonoBehaviour<UIManager>
     public Camera UICamera => _uiCamera;
 
     #region Methods
-
-    protected override void Awake()
-    {
-        base.Awake();
-        if (Instance != this) return;
-    }
 
     private ScreenBase GetOrLoadScreen(Type type)
     {

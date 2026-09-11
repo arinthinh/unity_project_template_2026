@@ -11,17 +11,15 @@ public enum ESaveType
     File
 }
 
-public class DataManager : SingletonMonoBehaviour<DataManager>
+public class DataManager : MonoSingleton<DataManager>
 {
     public ESaveType SaveType;
     public List<GameData> DataList = new();
 
     private string SavePath => Path.Combine(Application.persistentDataPath, "Saves");
 
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
-        if (Instance != this) return;
         CreateFolder();
         foreach (var data in DataList)
         {

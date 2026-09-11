@@ -1,5 +1,4 @@
 using System;
-using MemoryPack;
 
 [Serializable]
 public class UserSaveData
