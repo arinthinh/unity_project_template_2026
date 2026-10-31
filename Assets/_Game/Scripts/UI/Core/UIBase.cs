@@ -22,7 +22,7 @@ public class UIBase : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public virtual void Show()
+    public virtual void Show(object data = null)
     {
         gameObject.SetActive(true);
         _isShowing = true;

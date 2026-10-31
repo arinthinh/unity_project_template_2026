@@ -74,7 +74,7 @@ public sealed class UIManager : MonoSingleton<UIManager>
         return null;
     }
 
-    public T ShowScreen<T>() where T : ScreenBase
+    public T ShowScreen<T>(object data = null) where T : ScreenBase
     {
         var screen = GetOrLoadScreen(typeof(T)) as T;
         if (screen == null)
@@ -82,7 +82,7 @@ public sealed class UIManager : MonoSingleton<UIManager>
             Debug.LogError("Invalid screen " + typeof(T).FullName);
             return null;
         }
-        screen.Show();
+        screen.Show(data);
         return screen;
     }
 
@@ -114,7 +114,7 @@ public sealed class UIManager : MonoSingleton<UIManager>
         }
     }
 
-    public T ShowPopup<T>() where T : PopupBase
+    public T ShowPopup<T>(object data = null) where T : PopupBase
     {
         var popup = GetOrLoadPopup(typeof(T)) as T;
         if (popup == null)
@@ -122,7 +122,7 @@ public sealed class UIManager : MonoSingleton<UIManager>
             Debug.LogError("Invalid popup " + typeof(T).FullName);
             return null;
         }
-        popup.Show();
+        popup.Show(data);
         return popup;
     }
 
