@@ -1,6 +1,7 @@
+using Cysharp.Threading.Tasks;
 
 public interface IGameState
 {
-    public void Enter();
-    public void Exit();
+    public UniTask Enter();
+    public UniTask Exit();
 }
